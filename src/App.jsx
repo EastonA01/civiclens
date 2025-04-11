@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import NavbarComponent from './components/navbar';
-import ChartTest from './components/chartTest';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import NavbarComponent from "./components/navbar";
+import ChartTest from "./components/chartTest";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
       <NavbarComponent />
-      <div id='page-content'>
+      <div id="page-content">
         <ChartTest />
         <h1>Vite + React</h1>
         <div className="card">
@@ -27,7 +27,7 @@ function App() {
         </p>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
