@@ -1,30 +1,28 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import NavbarComponent from "./components/navbar";
-import ChartTest from "./components/chartTest";
+import CountySelector from "./components/CountySelector";
+import React, { useState } from 'react';
+import HousingOccupancyComponent from "./components/HousingOccupancy";
+import EthnicDiversityComponent from "./components/EthnicDiversity";
+import FamilyStructureComponent from "./components/FamilyStructure";
+import PopulationAgeComponent from "./components/PopulationAge";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [selectedCounties, setSelectedCounties] = useState([]);
+  const [selectedView, setSelectedView] = useState('');
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent onNavigate={setSelectedView}/>
       <div id="page-content">
-        <ChartTest />
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
+        <CountySelector onCountyChange={setSelectedCounties} />
+
+        {/* Render selected comparison */}
+        {selectedView === 'housing' && <HousingOccupancyComponent counties={selectedCounties} />}
+        {selectedView === 'diversity' && <EthnicDiversityComponent counties={selectedCounties}/>}
+        {selectedView === 'structure' && <FamilyStructureComponent counties={selectedCounties} />}
+        {selectedView === 'age' && <PopulationAgeComponent counties={selectedCounties} />}
+
       </div>
     </>
   );
