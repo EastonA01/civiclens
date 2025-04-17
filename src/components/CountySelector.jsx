@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const CountySelector = ({ onCountyChange }) => {
   const [counties, setCounties] = useState([]);
@@ -63,8 +63,9 @@ const CountySelector = ({ onCountyChange }) => {
     <div>
       <h3>Select Counties to Compare:</h3>
       {selectedCounties.map((fips, index) => (
-        <div key={index} style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
+        <div key={index} className='counties-container'>
           <select
+            className='form-select'
             value={fips}
             onChange={(e) => handleCountyChange(index, e.target.value)}
           >

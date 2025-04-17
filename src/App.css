@@ -1,36 +1,16 @@
-#root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
-  padding: 2rem;
-  /* text-align: center; */
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
@@ -42,7 +22,32 @@
 }
 
 #page-content {
+  --remaining-page-height: calc(100vh - var(--nav-height));
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: var(--remaining-page-height);
+  max-height: var(--remaining-page-height);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.counties-container {
+  margin-bottom: 10px;
+  ;
+  display: flex;
+  ;
+  align-items: center;
+}
+
+.canvas-container {
+  /* width: 100%; */
+}
+
+.halfed-content {
+  min-width: 49%;
+  padding: 1%;
+  max-height: 65%;
+  overflow: auto;
 }

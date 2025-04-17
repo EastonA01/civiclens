@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from 'react';
 import axios from 'axios';
 import {
-  Chart,
   BarController,
   BarElement,
   CategoryScale,
+  Chart,
+  Legend,
   LinearScale,
   Title,
-  Tooltip,
-  Legend
+  Tooltip
 } from 'chart.js';
+import React, { useEffect, useRef } from 'react';
 
 // Register the chart components globally
 Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
@@ -106,7 +106,7 @@ const PopulationAgeComponent = ({ counties }) => {
   }, [counties]);
 
   return (
-    <div style={{ width: '25vw' }}>
+    <div className='canvas-container'>
       <canvas ref={canvasRef} />
     </div>
   );

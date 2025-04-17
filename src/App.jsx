@@ -1,11 +1,11 @@
-import "./App.css";
-import NavbarComponent from "./components/navbar";
-import CountySelector from "./components/CountySelector";
 import React, { useState } from 'react';
-import HousingOccupancyComponent from "./components/HousingOccupancy";
+import "./App.css";
+import CountySelector from "./components/CountySelector";
 import EthnicDiversityComponent from "./components/EthnicDiversity";
 import FamilyStructureComponent from "./components/FamilyStructure";
+import HousingOccupancyComponent from "./components/HousingOccupancy";
 import PopulationAgeComponent from "./components/PopulationAge";
+import TopNavbar from "./components/TopNavbar";
 
 function App() {
   const [selectedCounties, setSelectedCounties] = useState([]);
@@ -13,15 +13,19 @@ function App() {
 
   return (
     <>
-      <NavbarComponent onNavigate={setSelectedView}/>
+      <TopNavbar onNavigate={setSelectedView} />
       <div id="page-content">
-        <CountySelector onCountyChange={setSelectedCounties} />
+        <div className='halfed-content min-width-50'>
+          <CountySelector onCountyChange={setSelectedCounties} />
+        </div>
 
-        {/* Render selected comparison */}
-        {selectedView === 'housing' && <HousingOccupancyComponent counties={selectedCounties} />}
-        {selectedView === 'diversity' && <EthnicDiversityComponent counties={selectedCounties}/>}
-        {selectedView === 'structure' && <FamilyStructureComponent counties={selectedCounties} />}
-        {selectedView === 'age' && <PopulationAgeComponent counties={selectedCounties} />}
+        <div className='halfed-content w-50'>
+          {/* Render selected comparison */}
+          {selectedView === 'housing' && <HousingOccupancyComponent counties={selectedCounties} />}
+          {selectedView === 'diversity' && <EthnicDiversityComponent counties={selectedCounties} />}
+          {selectedView === 'structure' && <FamilyStructureComponent counties={selectedCounties} />}
+          {selectedView === 'age' && <PopulationAgeComponent counties={selectedCounties} />}
+        </div>
 
       </div>
     </>

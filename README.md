@@ -29,14 +29,14 @@ Overall this project's goal was to create a full-stack, data-driven web applicat
     
     - Filterable tables and search functionality.
         
-    - Graphs/charts (via Chart.js or D3.js) showing trends over time or across regions.
+    - Graphs/charts (via Chart.js) showing trends over time or across regions.
         
 
 #### ❓ Data Import & Cleaning:
 
 - Pull open datasets from sources like:
     
-    - U.S. Census Bureau
+    - U.S. Census Bureau ✅
         
     - local data portals (e.g., NYC OpenData)
         
@@ -44,7 +44,7 @@ Overall this project's goal was to create a full-stack, data-driven web applicat
         
 #### ❓ Stretch Goals:
 
-- Write scripts (Python or your language of choice) to clean and normalize incoming data for your database.
+- Write scripts to clean and normalize incoming data for database.
 
 - Learn and implement a lightweight backend framework (Flask for Python, FastAPI, or Express.js for Node).
     
@@ -58,7 +58,7 @@ Overall this project's goal was to create a full-stack, data-driven web applicat
 
 ## Acknowledgements
 
- - [React-Chartjs-2 Library](https://react-chartjs-2.js.org/)
+ - [Taylor Cyr](https://github.com/tcyr123) For his help in QA and insight
 
 
 ## Badges
@@ -93,7 +93,7 @@ Please adhere to this project's `code of conduct`.
 Clone the project
 
 ```bash
-  git clone https://https://github.com/EastonA01/civiclens.git
+  git clone https://github.com/EastonA01/civiclens.git
 ```
 
 Go to the project directory
