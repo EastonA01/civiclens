@@ -57,6 +57,7 @@ button {
   background-color: var(--theme-navy);
   cursor: pointer;
   transition: border-color 0.25s;
+  color: var(--theme-navy-lighter);
 }
 
 button:hover {
